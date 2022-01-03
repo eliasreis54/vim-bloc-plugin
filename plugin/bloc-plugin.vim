@@ -27,7 +27,7 @@ function! BlocPlugin(...)
                         call system(renameSource)
 
                         let deleteFile = "rm " . path . "/bloc/" . i . ".bak"
-                        call system(renameSource)
+                        call system(deleteFile)
                 endfor
 
                 echo "All done"
