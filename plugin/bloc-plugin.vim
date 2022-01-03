@@ -16,10 +16,10 @@ function! BlocPlugin(...)
                 call system(command)
 
                 for i in ["bloc.dart", "state.dart", "event.dart"]
-                        let renameFileName = "sed -i 's/<rename_file>/" . tolower(blocName) . "/gi' " . path . "/bloc/" . i
+                        let renameFileName = "sed -i'' 's/<rename_file>/" . tolower(blocName) . "/gi' " . path . "/bloc/" . i
                         call system(renameFileName)
 
-                        let renameClassName = "sed -i 's/<rename>/" . blocName . "/gi' " . path . "/bloc/" . i
+                        let renameClassName = "sed -i'' 's/<rename>/" . blocName . "/gi' " . path . "/bloc/" . i
                         call system(renameClassName)
 
                         let destinationName = tolower(blocName) . "_" . i
