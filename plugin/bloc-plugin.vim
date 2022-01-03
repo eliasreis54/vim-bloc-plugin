@@ -25,6 +25,9 @@ function! BlocPlugin(...)
                         let destinationName = tolower(blocName) . "_" . i
                         let renameSource = "mv " . path . "/bloc/" . i . " " . path .  "/bloc/" . destinationName
                         call system(renameSource)
+
+                        let deleteFile = "rm " . path . "/bloc/" . i ".bak"
+                        call system(renameSource)
                 endfor
 
                 echo "All done"
