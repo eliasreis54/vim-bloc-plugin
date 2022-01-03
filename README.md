@@ -16,13 +16,23 @@ run `PlugInstall` and you must source your .vimrc
 
 ## Usage
 
-After your already installed the plugin, it enable a new command
+After your already installed the plugin, it enable a two new commands
 
 ```bash
 :Bloc <BlocName> <DestinationFolder>
 ```
 
 - BlocName: Is the name will be used to generate all bloc files and classes
+    - **This name must be a CamelCase**
+- DestinationFolder: Is the path to generate the files, like: `lib/posts`
+    - **Don't start with `/`**
+
+
+```bash
+:Cubit <CubitName> <DestinationFolder>
+```
+
+- CubitName: Is the name will be used to generate all cubit files and classes
     - **This name must be a CamelCase**
 - DestinationFolder: Is the path to generate the files, like: `lib/posts`
     - **Don't start with `/`**
