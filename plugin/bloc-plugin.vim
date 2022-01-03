@@ -26,7 +26,7 @@ function! BlocPlugin(...)
                         let renameSource = "mv " . path . "/bloc/" . i . " " . path .  "/bloc/" . destinationName
                         call system(renameSource)
 
-                        let deleteFile = "rm " . path . "/bloc/" . i ".bak"
+                        let deleteFile = "rm " . path . "/bloc/" . i . ".bak"
                         call system(renameSource)
                 endfor
 
