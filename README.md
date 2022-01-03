@@ -1,6 +1,6 @@
 # vim-bloc-plugin
 
-This plugin was designed to be similar the vscode extension.
+This plugin was designed to be similar the [vscode extension](https://github.com/felangel/bloc/tree/master/extensions/vscode).
 Generating the Flutter Bloc or Cubit files.
 
 
