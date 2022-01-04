@@ -23,10 +23,11 @@ function RenameAndDeleteFiles(...)
 
                 let deleteFile = "rm " . path . "/" . type . "/" . i . ".bak"
                 call system(deleteFile)
-                
-                let remoGit = "rm -rf " . path . "/" . type . "/.git"
-                call system(remoGit)
         endfor
+
+        let remoGit = "rm -rf " . path . "/" . type . "/.git"
+        call system(remoGit)
+
 endfunction
 
 function! BlocPlugin(...)
