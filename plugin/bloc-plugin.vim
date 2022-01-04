@@ -9,7 +9,7 @@ function RenameAndDeleteFiles(...)
         let name = a:000[2]
         let path = a:000[3]
         let lowerName = tolower(name)
-                
+
         call system("node converter/index.js EliaFranciscoDosReis")
 
         for i in allFiles
