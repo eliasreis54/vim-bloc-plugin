@@ -9,8 +9,7 @@ function RenameAndDeleteFiles(...)
         let name = a:000[2]
         let path = a:000[3]
         let lowerName = tolower(name)
-
-        echo $(call system("node ./converter/index.js EliaFranciscoDosReis"))
+        let camelCase = substitute(tolower, '\u', ' \l&', "g")[1:]
 
         for i in allFiles
                 let renameFileName = "sed -i'.bak' 's/<rename_file>/" . lowerName . "/gi' " . path . "/" . type . "/" . i
@@ -29,7 +28,7 @@ function RenameAndDeleteFiles(...)
 
         let remoGit = "rm -rf " . path . "/" . type . "/.git"
         call system(remoGit)
-
+        echo camelCase
 endfunction
 
 function! BlocPlugin(...)
