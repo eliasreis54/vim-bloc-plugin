@@ -34,7 +34,7 @@ function! BlocPlugin(...)
         else
                 let blocName = args[0]
                 let path = args[1]
-                let command = "git clone git@github.com:eliasreis54/vim_bloc_plugin_source.git " . path . "/bloc/"
+                let command = "git clone --bare https://github.com/eliasreis54/vim_bloc_plugin_source.git " . path . "/bloc/"
 
                 call system(command)
 
@@ -51,7 +51,7 @@ function! CubitPlugin(...)
         else
                 let cubitName = args[0]
                 let path = args[1]
-                let command = "git clone git@github.com:eliasreis54/vim_bloc_plugin_cubit_source.git " . path . "/cubit/"
+                let command = "git clone --bare https://github.com/eliasreis54/vim_bloc_plugin_cubit_source.git " . path . "/cubit/"
 
                 call system(command)
 

@@ -5,8 +5,11 @@ This plugin was designed improve the flutter bloc developer experience using vim
 
 ## Installation
 
+<<<<<<< Updated upstream
 ### You need to set you ssh key on github to able this plugin clone some files
 
+=======
+>>>>>>> Stashed changes
 Assuming you are using vim-plug as plugin manager, you can just put it in yout init.vim
 
 ```bash
