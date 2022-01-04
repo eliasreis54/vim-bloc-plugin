@@ -6,8 +6,6 @@ Generating the Flutter Bloc or Cubit files.
 
 ## Installation
 
-### You need to set up your ssh key on github to able this plugin clone some files
-
 Assuming you are using vim-plug as plugin manager, you can just put it in yout init.vim
 
 ```bash
