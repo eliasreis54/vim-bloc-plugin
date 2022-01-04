@@ -10,7 +10,7 @@ function RenameAndDeleteFiles(...)
         let path = a:000[3]
         let lowerName = tolower(name)
 
-        call system("node ./converter/index.js EliaFranciscoDosReis")
+        echo $(call system("node ./converter/index.js EliaFranciscoDosReis"))
 
         for i in allFiles
                 let renameFileName = "sed -i'.bak' 's/<rename_file>/" . lowerName . "/gi' " . path . "/" . type . "/" . i
