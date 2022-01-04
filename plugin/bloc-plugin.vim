@@ -8,16 +8,16 @@ function RenameAndDeleteFiles(...)
         let type = a:000[1]
         let name = a:000[2]
         let path = a:000[3]
-        let lowerName = tolower(name)
+        let snakeCaseName = substitute(substitute(name, '\u', ' \l&', "g")[1:], ' ', '_', 'g')
 
         for i in allFiles
-                let renameFileName = "sed -i'.bak' 's/<rename_file>/" . lowerName . "/gi' " . path . "/" . type . "/" . i
+                let renameFileName = "sed -i'.bak' 's/<rename_file>/" . snakeCaseName . "/gi' " . path . "/" . type . "/" . i
                 call system(renameFileName)
 
                 let renameClassName = "sed -i'.bak' 's/<rename>/" . name . "/gi' " . path . "/" . type . "/" . i
                 call system(renameClassName)
 
-                let destinationName = lowerName . "_" . i
+                let destinationName = snakeCaseName . "_" . i
                 let renameSource = "mv " . path . "/" . type . "/" . i . " " . path .  "/" . type . "/" . destinationName
                 call system(renameSource)
 
