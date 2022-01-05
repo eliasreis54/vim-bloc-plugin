@@ -34,7 +34,7 @@ function! BlocPlugin(...)
         let args = split(a:000[0])
 
         if len(args) < 2
-                echo "You must pass the BlocName and destinationPath like ':Bloc BlocName lib/blocName'"
+                echo "You must pass the BlocName and destinationPath like ':Bloc BlocName lib/feature_Name'"
         else
                 let blocName = args[0]
                 let path = args[1]
@@ -51,7 +51,7 @@ function! CubitPlugin(...)
         let args = split(a:000[0])
 
         if len(args) < 2
-                echo "You must pass the CubitName and destinationPath like ':Cubit CubitName lib/blocName'"
+                echo "You must pass the CubitName and destinationPath like ':Cubit CubitName lib/feature_Name'"
         else
                 let cubitName = args[0]
                 let path = args[1]
@@ -68,5 +68,3 @@ endfunction
 command! -nargs=* Bloc call BlocPlugin(<q-args>)
 
 command! -nargs=* Cubit call CubitPlugin(<q-args>)
-
-

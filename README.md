@@ -1,17 +1,25 @@
 # vim-bloc-plugin
 
 This plugin was designed to be similar the [vscode extension](https://github.com/felangel/bloc/tree/master/extensions/vscode).
+
 Generating the Flutter Bloc or Cubit files.
 
 
 ## Installation
 
-Assuming you are using vim-plug as plugin manager, you can just put it in yout init.vim
+Assuming you are using vim-plug as plugin manager, you can just put it in yout `init.vim`
 
 ```bash
-Plug 'eliasreis54/vim-bloc-plugin', {'branch': 'main'}
+Plug 'eliasreis54/vim-bloc-plugin'
 ```
-run `PlugInstall` and you must source your .vimrc
+
+run `:PlugInstall`, after that, you must source your `.vimrc`
+
+If you want to test beta features, you can use
+
+```bash
+Plug 'eliasreis54/vim-bloc-plugin', {'branch': 'develop'}
+```
 
 ## Usage
 
