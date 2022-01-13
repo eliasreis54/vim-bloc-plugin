@@ -46,12 +46,11 @@ function! BlocPlugin(...)
         else
                 let blocName = args[0]
                 let path = args[1]
-                " let command = "git clone https://github.com/eliasreis54/vim_bloc_plugin_source.git " . path . "/bloc/"
+                
+                let createPath = "mdkir -r " . path . "/bloc/"
+                call system(createPath)
 
                 let copyCommand = "cp -r ~/.local/share/nvim/plugged/vim-bloc-plugin/source/source/bloc/ " . path . "/bloc/"
-
-                echo copyCommand
-
                 call system(copyCommand)
 
                 call RenameAndDeleteFiles("bloc.dart state.dart event.dart", 'bloc', blocName, path)
