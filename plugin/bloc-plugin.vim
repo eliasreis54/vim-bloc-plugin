@@ -48,6 +48,7 @@ function! BlocPlugin(...)
                 let path = args[1]
                 
                 let createPath = "mdkir -p " . path . "/bloc/"
+                echo createPath
                 call system(createPath)
 
                 let copyCommand = "cp -r ~/.local/share/nvim/plugged/vim-bloc-plugin/source/source/bloc/ " . path . "/bloc/"
