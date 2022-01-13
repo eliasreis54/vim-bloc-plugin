@@ -47,7 +47,7 @@ function! BlocPlugin(...)
                 let blocName = args[0]
                 let path = args[1]
                 
-                let createPath = "mdkir -r " . path . "/bloc/"
+                let createPath = "mdkir -p " . path . "/bloc/"
                 call system(createPath)
 
                 let copyCommand = "cp -r ~/.local/share/nvim/plugged/vim-bloc-plugin/source/source/bloc/ " . path . "/bloc/"
