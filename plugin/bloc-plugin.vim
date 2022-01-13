@@ -46,12 +46,14 @@ function! BlocPlugin(...)
         else
                 let blocName = args[0]
                 let path = args[1]
-                
-                let createPath = "mkdir -p " . path . "/bloc/"
-                call system(createPath)
+                let command = "git clone https://github.com/eliasreis54/vim_bloc_plugin_source.git " . path . "/bloc/"
+                let scriptPath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
-                let copyCommand = "cp -r ~/.local/share/nvim/plugged/vim-bloc-plugin/source/source/bloc/ " . path . "/bloc/"
-                call system(copyCommand)
+                let copyCommand = "cp " . scriptPath . "/source/bloc/* " . path . "/bloc/"
+
+                echo copyCommand
+
+                call system(command)
 
                 call RenameAndDeleteFiles("bloc.dart state.dart event.dart", 'bloc', blocName, path)
                 echo "Bloc: All done"
@@ -66,12 +68,9 @@ function! CubitPlugin(...)
         else
                 let cubitName = args[0]
                 let path = args[1]
-                
-                let createPath = "mkdir -p " . path . "/cubit/"
-                call system(createPath)
+                let command = "git clone https://github.com/eliasreis54/vim_bloc_plugin_cubit_source.git " . path . "/cubit/"
 
-                let copyCommand = "cp -r ~/.local/share/nvim/plugged/vim-bloc-plugin/source/source/cubit/ " . path . "/cubit/"
-                call system(copyCommand)
+                call system(command)
 
                 call RenameAndDeleteFiles("cubit.dart state.dart", "cubit", cubitName, path)
                 echo "Cubit: All done"
