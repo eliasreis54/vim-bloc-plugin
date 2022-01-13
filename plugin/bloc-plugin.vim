@@ -3,19 +3,27 @@
 nnoremap K :BlocPlugin
 nnoremap K :CubitPlugin
 
+function SearchAndReplace(...)
+        let search = a:000[0]
+        let replace = a:000[1]
+        let type = a:000[2]
+        let path = a:000[3]
+        let fileName = a:000[4]
+
+        let stringCommand = "sed -i'.bak' 's/" . search . "/" . replace . "/gi' " . path . "/" . type . "/" . fileName
+        call system(stringCommand)
+endfunction
+
 function RenameAndDeleteFiles(...)
         let allFiles =  split(a:000[0])
         let type = a:000[1]
         let name = a:000[2]
         let path = a:000[3]
-        let snakeCaseName = substitute(substitute(name, '\u', ' \l&', "g")[1:], ' ', '_', 'g')
+        let snakeCaseName = substitute(name, '\u', '_\l&', "g")[1:]
 
         for i in allFiles
-                let renameFileName = "sed -i'.bak' 's/<rename_file>/" . snakeCaseName . "/gi' " . path . "/" . type . "/" . i
-                call system(renameFileName)
-
-                let renameClassName = "sed -i'.bak' 's/<rename>/" . name . "/gi' " . path . "/" . type . "/" . i
-                call system(renameClassName)
+                call SearchAndReplace("<rename_file>", snakeCaseName, type, path, i)
+                call SearchAndReplace("<rename>", name, type, path, i)
 
                 let destinationName = snakeCaseName . "_" . i
                 let renameSource = "mv " . path . "/" . type . "/" . i . " " . path .  "/" . type . "/" . destinationName
@@ -39,6 +47,11 @@ function! BlocPlugin(...)
                 let blocName = args[0]
                 let path = args[1]
                 let command = "git clone https://github.com/eliasreis54/vim_bloc_plugin_source.git " . path . "/bloc/"
+                let scriptPath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+
+                let copyCommand = "cp " . scriptPath . "/source/bloc/* " . path . "/bloc/"
+
+                echo copyCommand
 
                 call system(command)
 
