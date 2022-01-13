@@ -47,10 +47,8 @@ function! BlocPlugin(...)
                 let blocName = args[0]
                 let path = args[1]
                 let command = "git clone https://github.com/eliasreis54/vim_bloc_plugin_source.git " . path . "/bloc/"
-                " let scriptPath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-                let scriptPath = expand('<sfile>:p')
 
-                let copyCommand = "cp " . scriptPath . "/source/bloc/* " . path . "/bloc/"
+                let copyCommand = "cp -r .local/share/nvim/plugged/vim-bloc-plugin/source/bloc/ " . path . "/bloc/"
 
                 echo copyCommand
 
