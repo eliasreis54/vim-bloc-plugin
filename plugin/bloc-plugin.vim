@@ -47,7 +47,7 @@ function! BlocPlugin(...)
                 let blocName = args[0]
                 let path = args[1]
                 
-                let createPath = "mdkir -p " . path . "/bloc/"
+                let createPath = "mkdir -p " . path . "/bloc/"
                 echo createPath
                 call system(createPath)
 
