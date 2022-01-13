@@ -70,6 +70,7 @@ function! CubitPlugin(...)
                 let createPath = "mkdir -p " . path . "/cubit/"
                 call system(createPath)
 
+                echo plug_home
                 let copyCommand = "cp -r ~/.local/share/nvim/plugged/vim-bloc-plugin/source/source/cubit/ " . path . "/cubit/"
                 call system(copyCommand)
 
