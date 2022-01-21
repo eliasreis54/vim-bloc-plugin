@@ -10,7 +10,8 @@ Generating the Flutter Bloc or Cubit files.
 Assuming you are using vim-plug as plugin manager, you can just put it in your `init.vim`
 
 ```bash
-Plug 'felangel/bloc', { 'rtp': 'extension/vim' }
+Plug 'eliasreis54/vim-bloc-plugin'
+
 ```
 
 run `:PlugInstall`, after that, you must source your `.vimrc`
